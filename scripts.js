@@ -49,13 +49,12 @@ function deleteItem (index) {
 }
 
 function reloadTasks() {
-  if(myListTasks) {
-    const storage = localStorage.getItem('lists')
-    myListTasks = JSON.parse(storage)
-  }
-  
 
-  showTask()
+  const storage = localStorage.getItem('lists')
+  if(storage) {
+    myListTasks = JSON.parse(storage)
+    showTask()
+  }
 }
 
 
